@@ -17,6 +17,10 @@
  * Define Global Variables
  * 
 */
+const navbarMenu = document.getElementById("navbar__list");
+const sections = document.querySelectorAll("section");
+
+const navElements = navbarMenu.getElementsByClassName("menu__link");
 
 
 /**
@@ -25,8 +29,6 @@
  * 
 */
 
-
-
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -34,9 +36,32 @@
 */
 
 // build the nav
+function createNav() {
+    for (let item of sections) {
+        let section = document.createElement("li");
+        section.className = "menu__link";
+        section.dataset.nav = item.id;
+        section.innerText = item.dataset.nav;
+        navbarMenu.appendChild(section);
+    };
+};
 
+createNav();
 
 // Add class 'active' to section when near top of viewport
+function makeActive {
+    for (let item of sections) {
+        const position = item.getBoundingClientRect();
+        if (position.top <= 150 && position.bottom >= 150) {
+            item.classList.remove('your-active-class');
+            item.classList.add('active');
+        } else {
+            item.classList.remove('your-active-class');
+        };
+    };   
+};
+
+makeActive();
 
 
 // Scroll to anchor ID using scrollTO event
