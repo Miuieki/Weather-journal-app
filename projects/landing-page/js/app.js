@@ -49,22 +49,25 @@ function createNav() {
 createNav();
 
 // Add class 'active' to section when near top of viewport
-function makeActive {
+function activateSection() {
+// Create a loop that will iterate over all the sections.
     for (let item of sections) {
+    // Calculate each section's position
         const position = item.getBoundingClientRect();
+    // Compare the section position with a specific range to decide whether this section is actually in the viewport or not
         if (position.top <= 150 && position.bottom >= 150) {
-            item.classList.remove('your-active-class');
-            item.classList.add('active');
+            item.classList.add('your-active-class');
         } else {
             item.classList.remove('your-active-class');
-        };
-    };   
+    }; 
 };
-
-makeActive();
-
+activateSection();
 
 // Scroll to anchor ID using scrollTO event
+
+navElements.addEventListener("click", function() {
+    
+})
 
 
 /**
