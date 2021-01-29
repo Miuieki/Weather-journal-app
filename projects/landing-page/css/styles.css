@@ -67,7 +67,7 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .navbar__menu li {
@@ -83,14 +83,15 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: #40241a;
     color: #fff;
     transition: ease 0.3s all;
+    cursor: pointer;
 }
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: #9c786c;
     position: fixed;
     top: 0;
     width: 100%;
@@ -196,6 +197,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+
 }
 
 section.your-active-class .landing__container::before {
@@ -206,6 +208,12 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+.active {
+    background: #40241a;
+    color: #fff;
+    transition: ease 0.3s all;
 }
 
 /* Section Active Styles Keyframe Animations */
