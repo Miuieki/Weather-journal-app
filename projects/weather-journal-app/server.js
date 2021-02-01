@@ -32,10 +32,11 @@ const server = app.listen(port,()=>{
 // GET Routes set up with 2 arguments (partucular URL, callback dunction to return the endpoint)
 app.get("/all", function(req,res) {
     res.send(projectData);
+    console.log('Response sent');
 });
 
 // POST Routes / An entry to the project endpoint
-app.post("/all", function(req,res) {
+app.post("/a;;", function(req,res) {
     newEntry = {
         date: req.body.date,
         temp: req.body.temp,
