@@ -1,6 +1,6 @@
 /* Global Variables */
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '&appid=37f3924be7cf8785e01bd90fe67c2e51';
+const apiKey = ',us&appid=37f3924be7cf8785e01bd90fe67c2e51';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -21,13 +21,15 @@ function performAction() {
         console.log('data checkin', data);
         // Add data to POST request
         let temp = data.main.temp;
-        postData('/add', {
+        postData('/body', {
             temp: temp, 
             date: newDate, 
             content: feeling
-        });
+        })
     })
-    .then(updateUI());
+    .then(function() {
+        updateUI();
+    });
 };
 
 
@@ -79,4 +81,3 @@ const updateUI = async () => {
         console.log('error: ' , error);
     }
 };
-
