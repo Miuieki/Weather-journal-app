@@ -1,20 +1,23 @@
 /* Global Variables */
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = ',us&appid=37f3924be7cf8785e01bd90fe67c2e51';
+const apiKey = ',us&units=metric&appid=37f3924be7cf8785e01bd90fe67c2e51';
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
-
+let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Event listener when clicking 'generate'
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction() {
-    // Verify zipcode
+    // Verify zipcode  
     const zipCode = document.getElementById('zip').value;
     const feeling = document.getElementById('feelings').value;
-
+    const regex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+    if(zipCode.value === '' || !zipCode.match(regex)) {
+        alert(`Zipcode can't be empty or contain alphabets!`);
+    }
+    
     // Get the getWeatherData
     getWeatherData(baseURL, zipCode, apiKey)
     .then(function(data) {

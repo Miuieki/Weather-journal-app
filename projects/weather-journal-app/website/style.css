@@ -5,7 +5,7 @@ body{
 
 #app{
     display: grid;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(50px, auto);
     /* grid-template-columns:  */
     height:100vh;
     background: #f23557;
@@ -18,7 +18,7 @@ body{
 }
 
 .holder{
-
+    
 }
 
 .entry{
@@ -46,7 +46,7 @@ body{
 }
 
 .headline {
-
+    font-size: 50px;
 }
 .title{
 
